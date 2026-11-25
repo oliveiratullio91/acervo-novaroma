@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123e36">
+  <title>Acervo · Laboratório de acesso</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="estilo.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="atalho" href="#bancada">Pular para a demonstração</a>
+  <header class="cabecalho">
+    <div class="wrap topo">
+      <span class="identidade"><strong class="marca">Acervo<span>.</span></strong><span class="descritor">Biblioteca acadêmica</span></span>
+      <div class="ferramentas">
+        <button type="button" class="modo" id="modo" aria-pressed="false"><span class="tela" aria-hidden="true"></span><span id="rotulo-modo">Modo apresentação</span></button>
+        <span class="estado-conta" id="estado-conta">Sem sessão</span>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="titulo">
+      <img src="livros.jpg" width="1100" height="733" alt="" class="foto" fetchpriority="high">
+      <div class="intro-texto">
+        <p class="editoria">Desenvolvimento Fullstack <span>/</span> U2A1</p>
+        <h1 id="titulo">Laboratório de <em>acesso.</em></h1>
+        <p class="chamada">Quem pode consultar o relatório da biblioteca? Faça a primeira consulta e compare a decisão da API ao trocar de perfil.</p>
+        <button type="button" class="iniciar" id="testar">Testar o relatório</button>
+      </div>
+    </section>
+    <div id="bancada" class="layout" tabindex="-1">
+      <section class="credencial" aria-labelledby="titulo-conta">
+        <div class="titulo-cartao"><h2 id="titulo-conta">Carteira da biblioteca</h2></div>
+        <form id="login">
+          <fieldset><legend>Escolha uma conta de exemplo</legend>
+            <div class="seletor">
+              <button type="button" class="perfil" data-perfil="leitor" aria-pressed="true">Leitor</button>
+              <button type="button" class="perfil" data-perfil="equipe" aria-pressed="false">Bibliotecária</button>
+            </div>
+          </fieldset>
+          <label for="email">E-mail</label>
+          <input id="email" type="email" autocomplete="off" required value="leitor@acervo.test">
+          <label for="senha">Senha de demonstração</label>
+          <input id="senha" type="text" autocomplete="off" spellcheck="false" required value="Leitura!104">
+          <p id="erro-login" class="aviso" role="alert" hidden></p>
+          <button class="primario" id="entrar">Entrar na biblioteca</button>
+        </form>
+        <div id="sessao" hidden>
+          <p class="micro">Titular da carteira</p><h3 id="nome"></h3><p id="papel"></p>
+          <dl class="ficha"><div><dt>Credencial</dt><dd>JWT</dd></div><div><dt>Válida até</dt><dd id="expira"></dd></div></dl>
+          <button type="button" id="sair">Sair da conta</button>
+        </div>
+      </section>
+      <section class="consultas" aria-labelledby="titulo-consultas">
+        <h2 id="titulo-consultas">Consultas protegidas</h2>
+        <div class="rotas">
+          <button type="button" class="rota" data-rota="circulacao" aria-label="Consultar relatório de circulação" aria-controls="painel">
+            <span class="endpoint"><b>GET</b> /api/circulacao</span>
+            <strong>Relatório de circulação</strong><span class="descricao">Uso exclusivo da equipe.</span>
+            <span class="acao">Consultar relatório</span>
+          </button>
+          <button type="button" class="rota" data-rota="meus-emprestimos" aria-label="Consultar meus empréstimos" aria-controls="painel">
+            <span class="endpoint"><b>GET</b> /api/meus-emprestimos</span>
+            <strong>Meus empréstimos</strong><span class="descricao">Livros da conta atual.</span>
+            <span class="acao">Consultar empréstimos</span>
+          </button>
+        </div>
+        <section class="console" id="painel" aria-labelledby="titulo-resposta" tabindex="-1">
+          <div class="console-top"><h3 id="titulo-resposta">Resposta da API</h3><span id="requisicao">Aguardando requisição</span></div>
+          <div id="decisao" role="status" aria-atomic="true">
+            <strong id="status">Em espera</strong>
+            <p id="motivo">Consulte uma das rotas para ver a resposta do servidor.</p>
+          </div>
+          <dl id="etapas" class="etapas" hidden>
+            <div><dt>Autenticação</dt><dd id="autenticacao"></dd></div>
+            <div><dt>Autorização</dt><dd id="autorizacao"></dd></div>
+          </dl>
+          <details id="detalhes" hidden><summary>Ver resposta JSON</summary><pre id="resposta"></pre></details>
+        </section>
+      </section>
+      <section id="comparacao" class="comparacao" hidden aria-labelledby="titulo-comparacao">
+        <div class="cab-comparacao"><div><h2 id="titulo-comparacao">Resultados do relatório</h2><p>Última resposta observada para cada perfil.</p></div>
+          <button type="button" class="limpar" id="limpar">Limpar comparação</button>
+        </div>
+        <ul id="historico"></ul>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap"><span class="marca pequena">Acervo<span>.</span></span><span>Tassiana Oliveira e Tullio Oliveira</span></div></footer>
+</body>
+</html>
