@@ -1,6 +1,13 @@
 # Acervo · Seminário Fullstack U2A1
 
-**Tassiana Oliveira e Tullio Oliveira**
+## Equipe do projeto
+
+| Integrante | Atuação |
+| --- | --- |
+| **Tullio Oliveira** | Desenvolvimento Fullstack |
+| **Tassiana Oliveira** | Desenvolvimento Fullstack |
+
+Projeto acadêmico desenvolvido por **Tullio Oliveira e Tassiana Oliveira**.
 
 Tema 01 — Autenticação e autorização com JWT e bcrypt.
 
