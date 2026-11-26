@@ -1,0 +1,43 @@
+<section class="conta-cartao" aria-labelledby="titulo-operacao">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-operacao">Inventário físico</h2>
+      <p>Consulte a estante, a situação e a última conferência de cada exemplar.</p>
+    </div>
+  </header>
+  <div class="conta-cartao-corpo operacao">
+    <details class="op-editor" id="editor-copia">
+      <summary>Cadastrar ou editar exemplar</summary>
+      <form class="op-form" id="form-copia">
+        <input name="tombo" type="hidden" /><label>Edição<select name="livroId" required></select></label
+        ><label
+          >Localização<input
+            name="localizacao"
+            required
+            maxlength="120"
+            placeholder="Ex.: Estante B · Prateleira 2" /></label
+        ><label
+          >Situação<select name="estado">
+            <option value="regular">Regular</option>
+            <option value="manutencao">Em manutenção</option>
+            <option value="extraviado">Extraviado</option>
+          </select></label
+        ><button class="botao" type="submit">Salvar exemplar</button
+        ><button type="reset" class="botao botao-secundario">Novo exemplar</button>
+      </form>
+    </details>
+    <form class="op-form" id="form-conferir">
+      <label
+        >Conferir por código de barras<input name="tombo" required placeholder="Tombo do exemplar" /></label
+      ><button class="botao" type="submit">Confirmar conferência</button>
+    </form>
+    <label
+      >Buscar por título, tombo, leitor ou localização<input
+        name="busca"
+        type="search"
+        id="op-busca"
+        autocomplete="off"
+    /></label>
+    <div id="op-lista" class="op-lista"></div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="conta-cartao" aria-labelledby="titulo-operacao">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-operacao">Indicadores de circulação</h2>
+      <p>Consulte a procura por título no período e a necessidade atual de reposição.</p>
+    </div>
+  </header>
+  <div class="conta-cartao-corpo operacao">
+    <form class="op-form" id="form-indicadores">
+      <label>De<input name="de" type="date" /></label><label>Até<input name="ate" type="date" /></label
+      ><button class="botao" type="submit">Consultar período</button>
+    </form>
+    <dl class="indicadores-circulacao">
+      <div>
+        <dt>Empréstimos no período</dt>
+        <dd id="op-emprestimos">—</dd>
+      </div>
+      <div>
+        <dt>Entradas na fila no período</dt>
+        <dd id="op-esperas">—</dd>
+      </div>
+    </dl>
+    <h3>Procura por título e situação atual</h3>
+    <div id="op-lista" class="op-lista"></div>
+  </div>
+</section>

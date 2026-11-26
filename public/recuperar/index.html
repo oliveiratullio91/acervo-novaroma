@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Recuperar acesso | Acervo</title>
+    <link rel="icon" href="/marca-acervo.png" />
+    <link rel="stylesheet" href="/estilo.css" />
+    <script type="module" src="/recuperar/recuperar.js"></script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="conteudo topo">
+        <a class="marca" href="/"
+          ><img class="marca-selo" src="/marca-acervo.png" alt="" /><span
+            ><strong>Acervo</strong><small>Biblioteca acadêmica</small></span
+          ></a
+        ><a href="/entrar/">Voltar ao login</a>
+      </div>
+    </header>
+    <main class="conteudo acesso">
+      <div class="acesso-painel">
+        <section class="acesso-formulario">
+          <h1 id="titulo">Recuperar acesso</h1>
+          <form id="email-recuperacao" class="formulario-login">
+            <p>Informe o e-mail cadastrado para receber um link válido por 20 minutos.</p>
+            <label for="email">E-mail cadastrado</label
+            ><input id="email" type="email" autocomplete="email" maxlength="254" required /><button
+              class="botao"
+            >
+              Solicitar link
+            </button>
+          </form>
+          <form id="trocar" class="formulario-login" hidden>
+            <label for="senha">Nova senha</label
+            ><input id="senha" type="password" autocomplete="new-password" minlength="8" required /><button
+              class="botao"
+            >
+              Salvar nova senha
+            </button>
+          </form>
+          <p id="estado" class="aviso" role="status" hidden></p>
+        </section>
+        <div class="acesso-imagem"><img src="/biblioteca.webp" alt="" /></div>
+      </div>
+    </main>
+  </body>
+</html>

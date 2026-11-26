@@ -1,0 +1,56 @@
+<section class="conta-cartao" id="ficha-leitor" aria-labelledby="nome-leitor">
+  <header class="conta-cartao-topo">
+    <div id="identidade-ficha" class="ficha-identidade">
+      <span class="avatar-usuario" data-avatar aria-hidden="true"></span>
+      <div>
+        <span class="ficha-rotulo">Ficha do leitor</span>
+        <h2 id="nome-leitor" data-nome></h2>
+      </div>
+    </div>
+    <a class="botao botao-secundario" id="voltar-da-ficha" href="/conta/circulacao/"><i class="icone-voltar-catalogo" aria-hidden="true"></i> <span>Voltar ao relatório</span></a>
+  </header>
+  <div class="conta-cartao-corpo">
+    <dl class="conta-dados" aria-label="Dados cadastrais">
+      <div><dt>Nº de cadastro</dt><dd id="cadastro-leitor"></dd></div>
+      <div><dt>E-mail</dt><dd id="email-leitor"></dd></div>
+      <div><dt>Tipo de conta</dt><dd id="tipo-leitor"></dd></div>
+    </dl>
+    <details class="ficha-movimentos" name="movimentos-leitor" open>
+      <summary>Empréstimos ativos <span id="quantidade-livros"></span> <span class="status-atraso" id="atrasos-ficha" hidden></span></summary>
+      <form id="formulario-emprestimo" class="ficha-emprestar">
+        <div class="campo-livro">
+          <label for="livro-emprestimo">Livro para emprestar</label>
+          <select id="livro-emprestimo" required></select>
+        </div>
+        <div class="campo-prazo">
+          <label for="prazo-devolucao">Devolver até</label>
+          <input type="date" id="prazo-devolucao" name="prazoDevolucao" required>
+        </div>
+        <button class="botao" type="submit" id="registrar-emprestimo">Registrar empréstimo</button>
+      </form>
+      <p class="aviso" id="estado-emprestimo" role="status" hidden></p>
+      <ul class="lista-conta" id="lista-emprestimos" hidden></ul>
+      <p class="ficha-vazio" id="vazio-emprestimos" hidden>Nenhum exemplar emprestado no momento.</p>
+    </details>
+    <details class="ficha-movimentos" name="movimentos-leitor">
+      <summary>Histórico de renovações <span id="quantidade-renovacoes"></span></summary>
+      <ul class="lista-conta" id="lista-renovacoes" hidden></ul>
+      <p class="ficha-vazio" id="vazio-renovacoes" hidden>Nenhuma renovação registrada.</p>
+    </details>
+    <details class="ficha-movimentos" name="movimentos-leitor">
+      <summary>Livros devolvidos <span id="quantidade-devolucoes"></span></summary>
+      <ul class="lista-conta" id="lista-devolucoes" hidden></ul>
+      <p class="ficha-vazio" id="vazio-devolucoes" hidden>Nenhuma devolução registrada.</p>
+    </details>
+    <details class="ficha-movimentos" name="movimentos-leitor">
+      <summary>Reservas ativas <span id="quantidade-reservas"></span></summary>
+      <ul class="lista-conta" id="lista-reservas" hidden></ul>
+      <p class="ficha-vazio" id="vazio-reservas" hidden>Nenhuma reserva aguardando retirada.</p>
+    </details>
+    <details class="ficha-movimentos" name="movimentos-leitor">
+      <summary>Histórico de reservas <span id="quantidade-historico"></span></summary>
+      <ul class="lista-conta" id="lista-historico" hidden></ul>
+      <p class="ficha-vazio" id="vazio-historico" hidden>Nenhuma reserva encerrada.</p>
+    </details>
+  </div>
+</section>

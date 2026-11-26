@@ -1,0 +1,160 @@
+.operacao,
+.op-secao,
+.op-lista {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+.op-secao {
+  margin: 0 0 20px;
+}
+.op-secao h3,
+.op-editor summary {
+  font-size: 1.1rem;
+  color: #244735;
+}
+.op-editor {
+  border: 1px solid #b4bda7;
+  border-radius: 10px;
+  padding: 12px 16px;
+  background: #f6f3e8;
+}
+.op-editor summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.op-editor[open] summary {
+  margin-bottom: 14px;
+}
+.op-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+.op-form label,
+.operacao > label {
+  display: grid;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  min-width: 0;
+}
+.op-form label {
+  flex: 1 1 145px;
+}
+.op-form label:has(input[type='checkbox']) {
+  display: flex;
+  align-items: center;
+}
+.op-form input:not([type='checkbox']),
+.op-form select,
+.op-form textarea,
+.operacao > label input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #9aa794;
+  border-radius: 7px;
+  padding: 9px;
+  color: #203b30;
+  background: #fffdf5;
+  font: inherit;
+}
+.op-form input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+}
+.op-lista {
+  gap: 8px;
+}
+.op-linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid #c4c8b5;
+  background: #fbf8ee;
+  border-radius: 9px;
+  padding: 12px 15px;
+}
+.op-linha > div:first-child {
+  flex: 1 1 180px;
+  overflow-wrap: anywhere;
+}
+.op-linha strong,
+.op-linha small {
+  display: block;
+}
+.op-linha small {
+  color: #495a4c;
+}
+.op-acoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.op-acoes .botao {
+  padding: 7px 10px;
+  min-height: 36px;
+}
+.carteira-fisica {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  max-width: 460px;
+  padding: 22px;
+  border-radius: 16px;
+  background: #173e31;
+  color: #faf4d9;
+}
+.carteira-fisica strong {
+  font:
+    1.8rem Georgia,
+    serif;
+}
+.carteira-fisica svg,
+#etiqueta-tombo {
+  max-width: 100%;
+  height: auto;
+}
+.avatar-usuario img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.op-form :focus-visible,
+.op-editor summary:focus-visible {
+  outline: 3px solid #8c551a;
+  outline-offset: 2px;
+}
+.op-lista:empty {
+  display: none;
+}
+@media print {
+  body:has(dialog[open]) > *:not(dialog[open]),
+  dialog[open] button,
+  dialog[open] a {
+    display: none !important;
+  }
+  dialog[open] {
+    position: static;
+    display: block;
+    margin: 0;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+    color: #000;
+  }
+  dialog::backdrop {
+    background: white;
+  }
+  .linha-tempo {
+    break-inside: avoid;
+  }
+}

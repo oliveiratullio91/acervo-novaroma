@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17372c">
+  <meta name="description" content="Consulte o catálogo completo da Biblioteca Acervo e reserve exemplares.">
+  <title>Catálogo | Acervo</title>
+  <link rel="icon" href="/marca-acervo.png" type="image/png">
+  <link rel="stylesheet" href="/estilo.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body class="pagina-catalogo">
+  <a class="atalho" href="#catalogo">Pular para o catálogo</a>
+  <header class="cabecalho">
+    <div class="conteudo topo">
+      <a class="marca" href="/" aria-label="Acervo, início">
+        <img class="marca-selo" src="/marca-acervo.png" alt="" width="49" height="49">
+        <span><strong>Acervo</strong><small>Biblioteca acadêmica</small></span>
+      </a>
+      <a class="botao botao-conta" id="atalho-conta" href="/conta/">
+        <i class="icone-pessoa" aria-hidden="true"></i>
+        <span class="avatar-usuario" data-avatar aria-hidden="true" hidden></span>
+        <span class="nome-atalho-conta" data-nome>Minha conta</span>
+        <i class="seta-atalho-conta" aria-hidden="true"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="conteudo catalogo" id="catalogo" aria-labelledby="titulo-catalogo" tabindex="-1">
+    <div class="catalogo-topo">
+      <div>
+        <h1 id="titulo-catalogo">Catálogo da biblioteca</h1>
+        <p>Consulte a disponibilidade e encontre o que ler.</p>
+      </div>
+    </div>
+    <div class="catalogo-busca">
+      <form class="busca" id="busca" action="/catalogo/" role="search">
+        <label class="visualmente-oculto" for="termo">Buscar no catálogo</label>
+        <i class="icone-busca" aria-hidden="true"></i>
+        <input type="search" id="termo" name="q" placeholder="Busque por título ou autor" maxlength="120">
+        <button type="submit" class="botao">Buscar</button>
+      </form>
+      <label class="filtro-disponivel"><input type="checkbox" id="so-disponiveis"> Somente disponíveis</label>
+    </div>
+    <div class="filtros">
+      <div class="categorias" id="categorias" role="group" aria-label="Categorias"></div>
+      <div class="resumo-busca">
+        <p id="total-titulos" class="total" role="status"></p>
+        <button type="button" id="remover-busca" hidden>Limpar busca</button>
+      </div>
+    </div>
+    <div id="estado-catalogo" class="estado-catalogo">
+      <p id="mensagem-catalogo" role="status">Carregando o catálogo…</p>
+      <button type="button" class="botao botao-secundario" id="recarregar-catalogo" hidden>Tentar novamente</button>
+      <button type="button" class="botao botao-secundario" id="limpar-filtros" hidden>Limpar filtros</button>
+    </div>
+    <div class="estante" id="estante"></div>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteudo rodape-conteudo">
+      <a class="marca" href="/" aria-label="Acervo, início">
+        <img class="marca-selo" src="/marca-acervo.png" alt="" width="49" height="49">
+        <span><strong>Acervo</strong><small>Biblioteca acadêmica</small></span>
+      </a>
+      <div class="rodape-links">
+        <a href="/laboratorio/">Projeto acadêmico U2A1</a>
+        <a href="/api-docs/">Documentação da API</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

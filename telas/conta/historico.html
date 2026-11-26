@@ -1,0 +1,23 @@
+<section class="conta-cartao" id="historico" tabindex="-1" aria-labelledby="titulo-historico">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-historico">Meu histórico</h2>
+      <p>Consulte suas renovações, as 20 últimas reservas encerradas e as 20 últimas devoluções.</p>
+    </div>
+  </header>
+  <div class="conta-cartao-corpo">
+    <section class="op-secao"><h3>Pesquisar todas as movimentações</h3><form class="op-form" id="form-arquivo"><label>Título<input name="q" type="search"></label><label>De<input name="de" type="date"></label><label>Até<input name="ate" type="date"></label><button class="botao" type="submit">Pesquisar histórico</button></form><div id="op-arquivo" class="op-lista"></div><div class="op-acoes"><button class="botao botao-secundario" id="op-anterior">Anterior</button><span id="op-pagina"></span><button class="botao botao-secundario" id="op-proxima">Próxima</button></div></section>
+    <h3 class="subtitulo-historico">Histórico de renovações</h3>
+    <ul class="lista-conta" id="lista-renovacoes" hidden></ul>
+    <p class="conta-vazio conta-vazio-compacto" id="vazio-renovacoes" hidden>Nenhuma renovação registrada.</p>
+    <h3 class="subtitulo-historico">Reservas encerradas</h3>
+    <ul class="lista-conta" id="lista-historico" hidden></ul>
+    <div class="conta-vazio conta-vazio-compacto" id="vazio-historico" hidden>
+      <span class="conta-vazio-icone" aria-hidden="true"><i class="icone-historico"></i></span>
+      <div><h3>Nenhuma reserva encerrada</h3><p>As reservas retiradas, canceladas ou expiradas aparecerão aqui.</p></div>
+    </div>
+    <h3 class="subtitulo-historico">Livros devolvidos</h3>
+    <ul class="lista-conta" id="lista-devolucoes" hidden></ul>
+    <p class="conta-vazio conta-vazio-compacto" id="vazio-devolucoes" hidden>Nenhuma devolução registrada.</p>
+  </div>
+</section>

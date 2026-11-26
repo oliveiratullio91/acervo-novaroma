@@ -1,0 +1,23 @@
+<section class="conta-cartao" id="circulacao" aria-labelledby="titulo-circulacao">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-circulacao">Relatório de circulação</h2>
+      <p>Empréstimos em andamento em toda a biblioteca.</p>
+    </div>
+    <button type="button" class="botao botao-secundario" id="atualizar-relatorio">Atualizar relatório</button>
+  </header>
+  <div class="conta-cartao-corpo">
+    <dl class="indicadores-circulacao">
+      <div><dt>Exemplares emprestados</dt><dd id="circulacao-exemplares">—</dd></div>
+      <div><dt>Leitores com empréstimos</dt><dd id="circulacao-leitores">—</dd></div>
+    </dl>
+    <p class="conta-ajuda" id="atualizacao-circulacao" role="status"></p>
+    <div class="op-form"><label>Buscar por título, leitor, tombo ou nº do empréstimo<input name="busca" type="search" id="op-busca" autocomplete="off"></label><label>Situação<select id="op-filtro"><option value="">Todas</option><option value="atrasado">Atrasados</option><option value="hoje">Vencem hoje</option><option value="sem">Sem prazo</option></select></label><label>Ordem<select id="op-ordem"><option value="">Por título</option><option value="prazo">Vencimento mais próximo</option></select></label></div>
+    <section class="circulacao-detalhes" aria-labelledby="titulo-lista-circulacao">
+      <h3 id="titulo-lista-circulacao">Exemplares em empréstimo</h3>
+      <p class="aviso" id="estado-emprestimo" role="status" tabindex="-1" hidden></p>
+      <ul class="lista-conta" id="lista-circulacao" hidden></ul>
+      <p class="conta-vazio conta-vazio-compacto" id="vazio-circulacao" hidden>Nenhum empréstimo corresponde à consulta.</p>
+    </section>
+  </div>
+</section>

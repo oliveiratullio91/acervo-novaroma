@@ -1,0 +1,47 @@
+<section class="conta-cartao" aria-labelledby="titulo-operacao">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-operacao">Balcão de atendimento</h2>
+      <p>Leia o código da carteirinha e o tombo do exemplar, ou digite os códigos.</p>
+    </div>
+  </header>
+  <div class="conta-cartao-corpo operacao">
+    <section class="op-secao">
+      <h3>Registrar empréstimo</h3>
+      <form class="op-form" id="form-retirada">
+        <label>Carteirinha<input name="leitor" required autocomplete="off" /></label
+        ><label>Tombo do exemplar<input name="tombo" required placeholder="AC-…" autocomplete="off" /></label
+        ><label>Devolver até<input name="prazoDevolucao" id="prazo-balcao" type="date" required /></label
+        ><button class="botao" type="submit">Registrar empréstimo</button>
+      </form>
+    </section>
+    <section class="op-secao">
+      <h3>Receber devolução</h3>
+      <form class="op-form" id="form-entrega">
+        <label>Tombo devolvido<input name="tombo" required placeholder="AC-…" /></label
+        ><button class="botao" type="submit">Receber exemplar</button>
+      </form>
+    </section>
+    <div id="op-recibo"></div>
+    <details class="op-editor">
+      <summary>Corrigir uma devolução</summary>
+      <form class="op-form" id="form-correcao">
+        <label>Cadastro do leitor<input name="leitor" required /></label
+        ><label>Número do empréstimo<input name="id" type="number" min="1" required /></label
+        ><label>Justificativa<input name="motivo" maxlength="500" required /></label
+        ><button class="botao" type="submit">Reabrir empréstimo</button>
+      </form>
+    </details>
+    <details class="op-editor">
+      <summary>Regras da biblioteca</summary>
+      <form class="op-form" id="form-regras">
+        <label>Dias para devolução<input name="dias" type="number" min="1" max="365" required /></label
+        ><label>Empréstimos por leitor<input name="limite" type="number" min="1" max="100" required /></label
+        ><label
+          >Renovações permitidas<input name="renovacoes" type="number" min="0" max="100" required /></label
+        ><label><input type="checkbox" name="respeitar_fila" /> Bloquear renovação quando houver fila</label
+        ><button class="botao" type="submit">Salvar regras</button>
+      </form>
+    </details>
+  </div>
+</section>

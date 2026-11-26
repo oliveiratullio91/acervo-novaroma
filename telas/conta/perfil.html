@@ -1,0 +1,42 @@
+<section class="conta-cartao" id="perfil" tabindex="-1" aria-labelledby="titulo-perfil">
+  <header class="conta-cartao-topo">
+    <div><h2 id="titulo-perfil">Perfil e segurança</h2><p>Consulte seus dados e gerencie o acesso à conta.</p></div>
+  </header>
+  <div class="conta-cartao-corpo">
+    <dl class="conta-dados">
+      <div><dt>Nome</dt><dd id="nome-perfil"></dd></div>
+      <div><dt>E-mail de acesso</dt><dd id="email-perfil"></dd></div>
+      <div><dt>Tipo de conta</dt><dd id="tipo-perfil"></dd></div>
+    </dl>
+    <div class="conta-vazio conta-vazio-compacto" id="perfil-demo" hidden>
+      <span class="conta-vazio-icone" aria-hidden="true"><i class="icone-seguranca"></i></span>
+      <div><h3>Conta de demonstração</h3><p>Crie uma conta pessoal para editar o perfil e a senha.</p></div>
+      <a class="botao botao-secundario" href="/cadastro/">Criar conta pessoal</a>
+    </div>
+    <div class="conta-formularios" id="opcoes-perfil" hidden>
+      <details>
+        <summary>Editar nome</summary>
+        <form class="formulario-login" id="formulario-perfil">
+          <label for="editar-nome">Nome</label>
+          <input id="editar-nome" type="text" autocomplete="name" minlength="2" maxlength="120" required>
+          <p class="aviso" id="estado-perfil" role="status" hidden></p>
+          <button type="submit" class="botao">Salvar nome</button>
+        </form>
+      </details>
+      <details>
+        <summary>Alterar senha</summary>
+        <form class="formulario-login" id="formulario-senha">
+          <label for="senha-atual">Senha atual</label>
+          <input id="senha-atual" type="password" autocomplete="current-password" required>
+          <label for="nova-senha">Nova senha</label>
+          <input id="nova-senha" type="password" autocomplete="new-password" minlength="8" aria-describedby="regra-senha" required>
+          <p class="requisito-senha" id="regra-senha">Use pelo menos 8 caracteres. Você precisará entrar novamente após alterar a senha.</p>
+          <label for="confirmar-senha">Confirme a nova senha</label>
+          <input id="confirmar-senha" type="password" autocomplete="new-password" required>
+          <p class="aviso" id="estado-senha" role="status" hidden></p>
+          <button type="submit" class="botao">Atualizar senha</button>
+        </form>
+      </details>
+    </div>
+  </div>
+</section>

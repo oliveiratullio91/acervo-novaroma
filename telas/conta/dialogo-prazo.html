@@ -1,0 +1,15 @@
+<dialog id="dialogo-prazo" aria-labelledby="titulo-alterar-prazo" aria-describedby="livro-alterar-prazo prazo-atual">
+  <form id="formulario-alterar-prazo" class="dialogo-conteudo">
+    <h2 id="titulo-alterar-prazo"></h2>
+    <p id="livro-alterar-prazo"></p>
+    <p class="conta-ajuda" id="prazo-atual"></p>
+    <div class="campo-prazo">
+      <label for="novo-prazo">Nova data de devolução</label>
+      <input id="novo-prazo" type="date" required max="9999-12-31" autofocus>
+    </div>
+    <div class="dialogo-acoes">
+      <button type="button" class="botao botao-secundario" id="cancelar-alteracao-prazo">Cancelar</button>
+      <button type="submit" class="botao">Salvar prazo</button>
+    </div>
+  </form>
+</dialog>

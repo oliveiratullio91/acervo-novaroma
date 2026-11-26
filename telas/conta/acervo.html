@@ -1,0 +1,25 @@
+<section class="conta-cartao" aria-labelledby="titulo-operacao">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-operacao">Gestão do acervo</h2>
+      <p>Cadastre edições e mantenha as informações que aparecem no catálogo.</p>
+    </div>
+  </header>
+  <div class="conta-cartao-corpo operacao">
+    <details id="editor-livro" class="op-editor">
+      <summary>Cadastrar ou editar edição</summary>
+      <form class="op-form" id="form-livro">
+        <input type="hidden" name="id" /><label>Título<input name="titulo" maxlength="200" required /></label
+        ><label>Autor<input name="autor" maxlength="150" required /></label
+        ><label>Categoria<input name="categoria" maxlength="80" required /></label
+        ><label>Edição<input name="edicao" maxlength="100" placeholder="Ex.: 2ª edição" /></label
+        ><label>Capa (URL HTTPS)<input name="capa" maxlength="1500" /></label
+        ><label>Sinopse<textarea name="descricao" maxlength="3000" rows="3"></textarea></label
+        ><button class="botao" type="submit">Salvar edição</button
+        ><button type="reset" class="botao botao-secundario">Limpar formulário</button>
+      </form>
+    </details>
+    <label>Buscar edição<input name="busca" type="search" id="op-busca" autocomplete="off" /></label>
+    <div id="op-lista" class="op-lista"></div>
+  </div>
+</section>

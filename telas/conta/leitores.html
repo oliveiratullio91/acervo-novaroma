@@ -1,0 +1,41 @@
+<section class="conta-cartao" id="leitores" aria-labelledby="titulo-leitores">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-leitores">Leitores</h2>
+      <p>Consulte o cadastro e as movimentações de cada leitor da biblioteca.</p>
+    </div>
+  </header>
+  <div class="conta-cartao-corpo">
+    <form action="/conta/leitores/#leitores" method="get" class="busca busca-leitores" role="search" aria-label="Pesquisa de leitores">
+      <label class="visualmente-oculto" for="busca-nome-leitor">Nome ou sobrenome</label>
+      <i class="icone-busca" aria-hidden="true"></i>
+      <input type="search" name="nome" id="busca-nome-leitor" maxlength="120" placeholder="Nome ou sobrenome">
+      <button type="submit" class="botao">Pesquisar</button>
+    </form>
+    <div class="leitores-lista-topo">
+      <h3 id="titulo-lista-leitores">Leitores cadastrados</h3>
+      <a href="/conta/leitores/#leitores" id="limpar-leitores" hidden>Limpar busca</a>
+    </div>
+    <ul class="diretorio-leitores" id="lista-leitores" aria-labelledby="titulo-lista-leitores" hidden></ul>
+    <p class="conta-vazio conta-vazio-compacto" id="vazio-leitores" hidden></p>
+    <nav class="paginas-leitores" id="paginas-leitores" aria-label="Páginas de leitores" hidden>
+      <a class="botao botao-secundario" id="leitores-anterior" hidden>Anterior</a>
+      <span id="pagina-leitores"></span>
+      <a class="botao botao-secundario" id="leitores-proxima" hidden>Próxima</a>
+    </nav>
+  </div>
+  <template id="linha-leitor">
+    <li>
+      <a class="leitor-resultado">
+        <span class="avatar-usuario" data-avatar aria-hidden="true"></span>
+        <div class="leitor-dados">
+          <strong data-nome></strong>
+          <span data-email></span>
+          <small data-cadastro></small>
+        </div>
+        <span class="leitor-emprestimos" data-emprestimos></span>
+        <span class="leitor-seta" aria-hidden="true">›</span>
+      </a>
+    </li>
+  </template>
+</section>

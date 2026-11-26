@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17372c">
+  <title>{{titulo}} | Acervo</title>
+  <link rel="icon" href="/marca-acervo.png" type="image/png">
+  <link rel="stylesheet" href="/estilo.css">
+  <link rel="stylesheet" href="/conta/estilo.css">
+  <link rel="stylesheet" href="/conta/operacoes.css">
+  <script defer src="/biblioteca/barcode.js"></script>
+  <script type="module" src="/conta/operacoes.js"></script>
+</head>
+<body class="pagina-conta" data-tela="{{tela}}">
+  <a class="atalho" href="#titulo-conta">Pular para minha conta</a>
+  <header class="cabecalho">
+    <div class="conteudo topo topo-conta">
+      <a class="marca" href="/" aria-label="Acervo, início">
+        <img class="marca-selo" src="/marca-acervo.png" alt="" width="49" height="49">
+        <span><strong>Acervo</strong><small>Biblioteca acadêmica</small></span>
+      </a>
+      <div class="acoes-conta">
+        <a class="acao-conta acao-catalogo" href="/catalogo/">
+          <i class="icone-voltar-catalogo" aria-hidden="true"></i> Catálogo
+        </a>
+        <button class="acao-conta acao-sair" id="sair" type="button" aria-label="Sair da conta">
+          <i class="icone-sair" aria-hidden="true"></i><span class="rotulo-sair">Sair</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="conteudo conta-pagina">
+    <section class="conta-banner" aria-labelledby="titulo-conta">
+      <img src="/biblioteca.webp" alt="" width="1536" height="1024">
+      <div class="conta-banner-texto">
+        <h1 id="titulo-conta" tabindex="-1">{{area}}</h1>
+        <div class="identidade-leitor" id="identidade-conta" hidden>
+          <span class="avatar-usuario" data-avatar aria-hidden="true"></span>
+          <div><p data-nome></p><span id="papel-identidade"></span></div>
+        </div>
+      </div>
+    </section>
+    <div class="conta-painel" id="painel-conta">
+      <nav class="conta-navegacao" aria-label="Navegação da conta">
+        {{menu}}
+      </nav>
+      <div class="conta-conteudo">
+        <p class="aviso" id="estado-conta" role="status">Carregando sua conta…</p>
+        <button class="botao botao-secundario" id="recarregar-conta" type="button" hidden>Tentar novamente</button>
+        <div id="dados-conta" hidden>
+          <p class="aviso aviso-atraso" id="aviso-atrasos" hidden>
+            <strong id="resumo-atrasos"></strong> <a href="/conta/emprestimos/">Ver empréstimos</a>
+          </p>
+          <p role="status" class="aviso" id="estado-operacoes" hidden></p>
+          {{conteudo}}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {{dialogoPrazo}}
+  <dialog id="detalhe-emprestimo" aria-labelledby="livro-detalhe" aria-describedby="numero-detalhe">
+    <div class="dialogo-conteudo">
+      <form method="dialog"><button type="submit" class="fechar" aria-label="Fechar detalhes do empréstimo" autofocus>×</button></form>
+      <p id="numero-detalhe" class="ficha-rotulo"></p>
+      <h2 id="livro-detalhe"></h2>
+      <p id="autor-detalhe" class="conta-ajuda"></p>
+      <h3 class="subtitulo-historico">Linha do tempo</h3>
+      <p class="aviso" id="estado-detalhe" role="status" hidden></p>
+      <ol class="linha-tempo" id="eventos-emprestimo"></ol>
+      <button type="button" class="botao" id="imprimir-recibo">Imprimir comprovante</button>
+      <a class="botao botao-secundario" id="catalogo-detalhe" hidden>Ver livro no catálogo</a>
+    </div>
+  </dialog>
+</body>
+</html>

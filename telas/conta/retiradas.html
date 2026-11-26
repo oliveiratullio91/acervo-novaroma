@@ -1,0 +1,20 @@
+<section class="conta-cartao" aria-labelledby="titulo-operacao">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-operacao">Reservas para retirada</h2>
+      <p>Localize a reserva e registre a entrega do exemplar ao leitor.</p>
+    </div>
+  </header>
+  <div class="conta-cartao-corpo operacao">
+    <div class="op-form">
+      <label>Livro ou leitor<input name="busca" type="search" id="op-busca" autocomplete="off" /></label
+      ><label
+        >Retirada<select id="filtro-retiradas">
+          <option value="">Todas as pendentes</option>
+          <option value="hoje">Encerram hoje</option>
+        </select></label
+      ><label>Devolver até<input name="prazo" id="prazo-balcao" type="date" required /></label>
+    </div>
+    <div id="op-lista" class="op-lista"></div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section class="conta-cartao" aria-labelledby="titulo-operacao">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-operacao">Carteirinha digital</h2>
+      <p>Apresente este código no balcão para registrar um empréstimo.</p>
+    </div>
+  </header>
+  <div class="conta-cartao-corpo operacao">
+    <div class="carteira-fisica">
+      <span>Acervo · Biblioteca acadêmica</span><strong id="nome-carteira"></strong
+      ><svg id="barras-carteira" role="img" aria-label="Código de barras da carteirinha"></svg
+      ><span id="id-carteira"></span>
+    </div>
+    <section class="op-secao">
+      <h3>Preferências</h3>
+      <form class="op-form" id="form-avisos">
+        <label
+          ><input name="ativar" type="checkbox" /> Receber avisos de retirada e devolução por e-mail</label
+        ><button class="botao" type="submit">Salvar preferência</button>
+      </form>
+      <form class="op-form" id="form-foto">
+        <label
+          >Foto de perfil<input
+            name="arquivo"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            required /></label
+        ><button class="botao" type="submit">Salvar foto</button
+        ><button id="remover-foto" type="button" class="botao botao-secundario">Remover foto</button>
+      </form>
+    </section>
+  </div>
+</section>

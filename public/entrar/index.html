@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17372c">
+  <title>Entrar | Acervo</title>
+  <link rel="icon" href="/marca-acervo.png" type="image/png">
+  <link rel="stylesheet" href="/estilo.css">
+  <script type="module" src="/acesso.js"></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="conteudo topo">
+      <a class="marca" href="/" aria-label="Acervo, início">
+        <img class="marca-selo" src="/marca-acervo.png" alt="" width="49" height="49">
+        <span><strong>Acervo</strong><small>Biblioteca acadêmica</small></span>
+      </a>
+      <a class="voltar-catalogo" href="/catalogo/"><span aria-hidden="true">←</span> Voltar ao catálogo</a>
+    </div>
+  </header>
+  <main class="conteudo acesso">
+    <div class="acesso-painel">
+      <section class="acesso-formulario" aria-labelledby="titulo">
+        <h1 id="titulo">Entrar</h1>
+        <p class="acesso-descricao">Acesse sua conta para reservar livros e acompanhar seus empréstimos.</p>
+        <p class="aviso" id="confirmacao-acesso" role="status" hidden></p>
+        <form id="formulario-acesso" class="formulario-login" data-modo="entrar" method="post" action="/api/sessao">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="username" maxlength="254" required>
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" autocomplete="current-password" required>
+          <p class="aviso aviso-erro" id="erro-acesso" role="alert" hidden></p>
+          <button type="submit" class="botao" id="enviar">Entrar</button>
+        </form>
+        <p class="acesso-troca">Primeira vez na biblioteca? <a id="outra-pagina" href="/cadastro/">Criar conta</a></p>
+        <p class="acesso-troca"><a href="/recuperar/">Esqueci minha senha</a></p>
+        <details class="demo" hidden>
+          <summary>Contas de demonstração</summary>
+          <div class="demo-opcoes">
+            <button type="button" class="botao botao-secundario" data-demo="leitor">Preencher como leitor</button>
+            <button type="button" class="botao botao-secundario" data-demo="equipe">Preencher como bibliotecária</button>
+          </div>
+        </details>
+      </section>
+      <div class="acesso-imagem">
+        <img src="/biblioteca.webp" alt="" width="1536" height="1024">
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+name: Regressão do Acervo
+on: [push, pull_request]
+jobs:
+  regressao:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: acervo
+          POSTGRES_PASSWORD: acervo
+          POSTGRES_DB: acervo_testes
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      DATABASE_URL: postgres://acervo:acervo@localhost:5432/acervo_testes
+      ACERVO_MODO: demonstracao
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+

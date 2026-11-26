@@ -1,0 +1,34 @@
+<section class="conta-cartao" id="reservas" tabindex="-1" aria-labelledby="titulo-reservas">
+  <header class="conta-cartao-topo">
+    <div>
+      <h2 id="titulo-reservas">Reservas ativas</h2>
+      <p>Acompanhe os prazos de retirada dos livros que você reservou.</p>
+    </div>
+    <a class="botao botao-secundario" id="mais-reservas" href="/catalogo/" hidden>Explorar catálogo <span aria-hidden="true">↗</span></a>
+  </header>
+  <div class="conta-cartao-corpo">
+    <section class="op-secao"><h3>Próximas ações</h3><ul id="avisos-leitor"></ul></section>
+    <ul class="lista-conta" id="lista-reservas" hidden></ul>
+    <div class="conta-vazio conta-vazio-reservas" id="vazio-reservas" hidden>
+      <div class="conta-vazio-texto">
+        <span class="conta-vazio-icone" aria-hidden="true"><i class="icone-reserva"></i></span>
+        <h3>Nenhuma reserva ativa</h3>
+        <p>Escolha um livro disponível no catálogo para reservar um exemplar.</p>
+        <a class="botao" href="/catalogo/">Explorar o catálogo <span aria-hidden="true">→</span></a>
+      </div>
+      <img src="/livros.jpg" alt="" width="1100" height="733" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<dialog id="confirmacao-cancelar" aria-labelledby="titulo-cancelar" aria-describedby="reserva-a-cancelar">
+    <div class="dialogo-conteudo">
+      <h2 id="titulo-cancelar">Cancelar reserva?</h2>
+      <p class="conta-ajuda" id="reserva-a-cancelar"></p>
+      <p class="aviso" id="erro-cancelar" role="alert" hidden></p>
+      <div class="dialogo-acoes">
+        <button type="button" class="botao botao-secundario" id="manter-reserva" autofocus>Manter reserva</button>
+        <button type="button" class="botao botao-alerta" id="cancelar-reserva">Cancelar reserva</button>
+      </div>
+    </div>
+  </dialog>
